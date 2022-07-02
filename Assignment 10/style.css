@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #b7daf2;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2 {
+  font-family: 'David Libre', serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5em;
+  padding: 1.3em 0;
+}
+
+h2 {font-size:1.25em;}
+
+p {
+    color: black;
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+  padding: 1.5em;
+  border: 1px black;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+ol, ul {
+    padding: 15px 30px;
+    border-radius: 4px;
+}
+h1, strong {
+    color: #B32102;
+}
+em {
+    color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgb(175, 222, 176);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns:
+   1fr       2fr       1fr;
+  grid-template-areas:
+  "heady     heady     heady"
+  "navvy     navvy     navvy"
+  "aside1    mainy     aside2"
+  "aside1    mainy     aside2"
+  "aside1    mainy     aside2"
+  "footy     footy     footy";
+}
+
+header {grid-area: heady; background: #67b2e3;}
+nav {grid-area: navvy; background:#48a2dd;}
+main {grid-area: mainy; background: #2992d8; max-height: 100%;}
+#aside1 {grid-area: aside1; background: #227dba;}
+#aside2 {grid-area: aside2; background: #227dba;}
+footer {grid-area: footy; background: #1c689b;}
+
+nav ul {
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none
+}
+
+@media screen
+  and (min-width: 641px)
+  and (max-width: 900px)  {
+.container {
+grid-template-columns:
+   1fr 1fr;
+grid-template-areas:
+  "heady heady"
+  "navvy navvy"
+  "mainy mainy"
+  "aside1 aside2"
+  "footy footy";
+}
+}
+
+@media screen
+  and (max-width: 640px)  {
+.container {
+grid-template-columns:
+   1fr;
+grid-template-areas:
+  "heady"
+  "mainy"
+  "aside1"
+  "aside2"
+  "navvy"
+  "footy";
+}
+nav ul {
+  flex-flow: column nowrap;
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  padding: 10px 5px;
+  margin: 5px;
+  border: 1px black solid;
+  background: white;
+
+}
+}
